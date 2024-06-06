@@ -23,7 +23,7 @@ const Landing = () => {
     // Auth URL and Parameters
     const authUrl = new URL("https://accounts.spotify.com/authorize");
     const clientId = '8344bbb71e7d4419a75beba93f6b26e1'
-    const redirectUri = 'http://localhost:5173/home'
+    const redirectUri = 'https://roundtables.vercel.app/'
     const scope = 'user-read-currently-playing playlist-read-private playlist-modify-public user-library-modify'
     
     const handleSpotifyLogin = async(e) => {
