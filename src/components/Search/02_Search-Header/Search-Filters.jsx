@@ -19,7 +19,6 @@ const SearchFilters = ({
         const filterId = e.target.closest('button').id;
         const filter = filters.find(filter => filter.type === filterId);
         // Only filter buttons have an ID that matches the key.
-        document.startViewTransition(() => {})
         if(filter) {
             setSelectedFilterType(filter.type)
         } else {
@@ -32,13 +31,14 @@ const SearchFilters = ({
         } 
         // filterActive is useEffect dependency in Search-Results to re-render the results.
         setFilterActive(filterActive => !filterActive);
-        document.startViewTransition(() => {
-            // Hides and unhides 'icon-cancel' button.
-            setHidden(hidden => !hidden);
-        })
-        if (!document.startViewTransition) {
-            setHidden(hidden => !hidden);
-        }
+        setHidden(hidden => !hidden);
+        // document.startViewTransition(() => {
+        //     // Hides and unhides 'icon-cancel' button.
+        //     setHidden(hidden => !hidden);
+        // })
+        // if (!document.startViewTransition) {
+        //     setHidden(hidden => !hidden);
+        // }
     }
 
     return(
