@@ -1,0 +1,86 @@
+@use '../colors' as color;
+
+.container-body {
+    margin: auto;
+    max-width: 90rem;
+    padding: 0.5rem;
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    gap: 0.5rem;
+
+    .container-left {
+        margin: auto;
+        flex-basis: 60%; 
+        flex-grow: 0;
+        flex-shrink: 1;
+
+        display: flex;
+        flex-direction: column;
+        width: 60svw;
+        height: 98.5svh;
+
+        .left-top {
+            margin-bottom: 0.5rem;
+            border: 1px solid color.$border-container;
+            border-radius: 10px;
+        }
+
+        .left-bottom {
+            width: 100%;    
+            border: 1px solid color.$border-container;
+            border-radius: 10px;
+            // overflow-y: auto;
+            @media screen and (max-width: 630px ) { 
+                border: none; 
+                border-radius: 0px;
+            }
+        }
+    }
+
+    
+    
+    .container-right {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 410px;
+        height: max-content;
+
+        border: 1px solid color.$border-container;
+        border-radius: 10px;
+        padding: 1.25rem;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;  
+    }
+
+    .solo-right {
+        height: 80dvh;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 1189px) {
+    .container-body {
+        max-width: 75%;
+        .container-left { 
+            flex-basis: 100%; 
+            height: 85.1svh;
+
+        }
+    }
+}
+
+@media screen and (max-width: 875px) {
+    .container-body {
+        max-width: 100%;
+        .container-left { 
+            flex-basis: 100%; 
+            height: 85.1svh;
+        }
+    }
+}

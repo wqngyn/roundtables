@@ -1,0 +1,85 @@
+@use '../../../colors' as color;
+
+.searchResults {
+    padding: 0.75rem min(1.5vw, 1.25rem);
+    cursor: pointer;
+
+    .row-result {
+        border-radius: 20px;
+        padding: 0.75rem;
+        display: grid;
+        column-gap: 2rem;
+        grid-template-columns: [col1] minmax(auto, 26rem) [col2] 5rem [col3] 5rem [col4] 3.1rem [col5] 1.4rem [end];
+        align-items: center;
+        justify-content: space-between;
+
+        &:hover { background: color.$hover-track; }
+
+        .track-container {
+            display: flex;
+            column-gap: 0.75rem;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .track-info { 
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+
+                .image .image-album {
+                    width: 60px;
+                    border-radius: 5px;
+                }
+
+                .text .track-features {
+                    display: none;
+                }
+            }
+        }
+    
+        .track-icons__max {
+            display: flex;
+            justify-content: center;
+        }
+
+        .track-icons__min { display: none; }
+    }
+}
+
+@media screen and (max-width: 630px ) {
+    .searchResults {
+        padding: 0;
+
+        .row-result { 
+            display: flex;
+            border: 1px solid color.$border-container;
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+            
+            .track-container .track-info {
+                .image .image-album { width: 75px; }
+
+                .text {
+                    .nameArtist { margin-bottom: 0.75rem; }
+
+                    .track-features { 
+                        display: flex; 
+                        gap: 1.5rem; 
+                        align-items: end;
+                        .feature { font-weight: 600; }
+                    }
+                }
+                
+            }
+
+            .track-icons__min {
+                display: flex;
+                gap: 1rem;
+            }            
+            
+            
+            .features-key, .features-camelot, .features-bpm, .track-icons__max { display: none; }
+        }
+    }
+}

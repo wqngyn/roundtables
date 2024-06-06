@@ -1,0 +1,32 @@
+@use '../../colors' as color;
+
+.currentTrack {
+    padding: 1.25rem 1.25rem 0 1.25rem;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1.5rem;
+
+    .image {
+        &-album { 
+            width: clamp(8rem, 12vw + 1rem, 15rem);
+            border-radius: 15px;
+        }
+    }
+    
+    .text {
+        display: flex;
+        flex-flow: column;
+        row-gap: 1rem;
+
+        .features { 
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            color: color.$subheader;
+        }
+
+    }
+}

@@ -1,0 +1,19 @@
+#Landing {
+    height: 80dvh;
+    padding: 3rem;
+
+    .landing {
+        &-header {
+            font-size: 2.2rem;
+        }
+
+        &-hook {
+            text-align: left;
+            margin-bottom: 1rem;
+            color: black;
+        }
+    }
+   
+    
+}
+
