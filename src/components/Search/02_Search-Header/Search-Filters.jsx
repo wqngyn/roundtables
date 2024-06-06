@@ -45,7 +45,7 @@ const SearchFilters = ({
     return(
         <div className={styles.searchFilters}>
             <button className={!hidden ? styles['btn-cancel'] : `${styles['btn-cancel']} removed`} id={null} onClick={(e) => handleClick(e)}>
-                <i className='icon-cancel'><FontAwesomeIcon icon={faCircleXmark} id='delete'  size='xl'/></i>
+                <i className='icon-cancel'><FontAwesomeIcon icon={faCircleXmark} id='delete' size='xl' /></i>
             </button>
             
             <div className="x-scroll">
