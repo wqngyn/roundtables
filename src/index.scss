@@ -128,8 +128,8 @@ i.icon-cancel {
 
 // Global Media Queries
 @media(max-width: 480px) {
-    button {
-        pointer-events: none;
+    html.touch button:hover {
+        all:unset!important;
     }
 }
 
