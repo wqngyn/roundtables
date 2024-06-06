@@ -41,7 +41,7 @@ export const filterState = [
     {
         type: 'Diagonal',
         active: false,
-        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} size='xl/></i>
+        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} size='xl'/></i>
     },
     {
         type: 'Scale Change',
