@@ -30,13 +30,13 @@ const SearchColumns = ({
         // Order of clicks is is 1. ascending 2. descending 3. no sort
         if(targetColumn.sort !== 'ascending' && targetColumn.sort !== 'descending') {
             targetColumn.sort ='ascending';
-            targetColumn.icon = <i className='no-hover'><FontAwesomeIcon icon={faCaretUp} size='lg'/></i>;
+            targetColumn.icon = <i className='no-hover'><FontAwesomeIcon icon={faCaretUp} size='xl'/></i>;
             arr = sortArr(arr, e.target.id, true);
             setRenderedSearchResults(arr);
             setSort({active: true, parameter: e.target.id, ascending: true});
         } else if(targetColumn.sort === 'ascending') {
             targetColumn.sort = 'descending';
-            targetColumn.icon = <i className="no-hover"><FontAwesomeIcon icon={faCaretDown} size='lg'/></i>;
+            targetColumn.icon = <i className="no-hover"><FontAwesomeIcon icon={faCaretDown} size='xl'/></i>;
             arr = sortArr(arr, e.target.id, false);
             setRenderedSearchResults(arr);
             setSort({active: true, parameter: e.target.id, ascending: false});
