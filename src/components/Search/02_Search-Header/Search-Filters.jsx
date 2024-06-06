@@ -32,11 +32,12 @@ const SearchFilters = ({
         // filterActive is useEffect dependency in Search-Results to re-render the results.
         setFilterActive(filterActive => !filterActive);
         // if (!document.startViewTransition) {
-        //     setHidden(hidden => !hidden);
+      
         // }
+        setHidden(hidden => !hidden);
         document.startViewTransition(() => {
             // Hides and unhides 'icon-cancel' button.
-            setHidden(hidden => !hidden);
+            // setHidden(hidden => !hidden);
         })
     }
 
