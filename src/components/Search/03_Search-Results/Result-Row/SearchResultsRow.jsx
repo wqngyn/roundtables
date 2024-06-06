@@ -98,14 +98,14 @@ const SearchResultsRow = ({
                 {(isHovered) &&
                     // Icon: Add Track
                     <div className={playlist.find((element) => element.id === track.id) === undefined ? styles['track-add'] : `${styles['track-add']} removed`} onClick={(e) => handleIconClick(track, e)}>
-                        <FontAwesomeIcon icon={faCirclePlus} size='lg' />
+                        <FontAwesomeIcon icon={faCirclePlus} size='xl' />
                     </div>
                 }   
 
                 {(isHovered) && 
                 // Icon: Track Added
                     <div className={playlist.find((element) => element.id === track.id) === undefined ? `${styles['track-added']} removed no-cursor` : `${styles['track-added']} no-hover`}>
-                            <FontAwesomeIcon icon={faCircleCheck} size='lg' />
+                            <FontAwesomeIcon icon={faCircleCheck} size='xl' />
                     </div>
                 }
             </div>

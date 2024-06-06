@@ -16,6 +16,12 @@
         &-filter {
             display: inline-block;
             text-wrap: nowrap;
+            h4 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.4rem;
+            }
         }
     }    
 }
