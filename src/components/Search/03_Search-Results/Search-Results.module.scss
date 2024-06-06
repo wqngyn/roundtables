@@ -13,7 +13,9 @@
         align-items: center;
         justify-content: space-between;
 
-        &:hover { background: color.$hover-track; }
+        @media (hover: hover) { // solves sticky hover problem on mobile
+            &:hover { background: color.$hover-track; }
+         }
 
         .track-container {
             display: flex;
