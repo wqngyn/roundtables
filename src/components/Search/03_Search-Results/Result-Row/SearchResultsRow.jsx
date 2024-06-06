@@ -77,10 +77,10 @@ const SearchResultsRow = ({
                 <div className={`${styles['track-icons__min']}`}>
                     {track.keyMatch && getFilterIcon(track.keyMatch)}
                     <div className={playlist.find((element) => element.id === track.id) === undefined ? styles['Track-Add'] : `${styles['Track-Add']} removed`} onClick={(e) => handleIconClick(track, e)}>
-                        <FontAwesomeIcon icon={faCirclePlus} size='lg' />
+                        <FontAwesomeIcon icon={faCirclePlus} size='xl' />
                     </div>
                     <div className={playlist.find((element) => element.id === track.id) === undefined ? `${styles['Track-Added']} removed no-cursor` : `${styles['Track-Added']} no-hover`}>
-                    <FontAwesomeIcon icon={faCircleCheck} size='lg' />
+                    <FontAwesomeIcon icon={faCircleCheck} size='xl' />
                 </div>
             </div>
             </div>

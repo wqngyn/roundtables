@@ -50,7 +50,7 @@ const PlaylistTrack = ({
             {isHovered &&
                 <div className="track-icon">
                      <div className={!isHovered ? `icon removed ${styles['icon-delete']}` : `icon ${styles['icon-delete']}`} onClick={() => deleteFromPlaylist(track)}>
-                        <FontAwesomeIcon icon={faCircleMinus} size='lg' />
+                        <FontAwesomeIcon icon={faCircleMinus} size='xl' />
                     </div>
                 </div>
             }

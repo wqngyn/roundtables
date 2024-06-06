@@ -16,37 +16,37 @@ export const filterState = [
     {
         type: 'Perfect',
         active: false,
-        icon: <i className="icon-filter no-hover"><FontAwesomeIcon id='filter' icon={faWandMagicSparkles}/></i>
+        icon: <i className="icon-filter no-hover"><FontAwesomeIcon id='filter' icon={faWandMagicSparkles} size='xl'/></i>
     },
     {
         type: 'Plus One',
         active: false,
-        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faAngleUp}/></i>
+        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faAngleUp} size='xl'/></i>
     },
     {
         type: 'Plus Two',
         active: false,
-        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faAnglesUp}/></i>
+        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faAnglesUp} size='xl'/></i>
     },
     {
         type: 'Minus One',
         active: false,
-        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faAngleDown}/></i>
+        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faAngleDown} size='xl'/></i>
     },
     {
         type: 'No Match',
         active: false,
-        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faBan}/></i>,
+        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faBan} size='xl'/></i>,
     },
     {
         type: 'Diagonal',
         active: false,
-        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter}/></i>
+        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} size='xl/></i>
     },
     {
         type: 'Scale Change',
         active: false,
-        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faScaleUnbalanced}/></i>
+        icon: <i className="icon-filter no-hover"><FontAwesomeIcon icon={faScaleUnbalanced} size='xl'/></i>
     },
 ];
 
