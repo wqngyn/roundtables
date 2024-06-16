@@ -12,20 +12,17 @@ import { UtilityContext } from '../contexts/UtilityContext'
 const Home = () => {
     const { getRefreshToken, getToken } = useContext(TokenAuthContext);
     const { filterState, columns } = useContext(UtilityContext);
-
     const [currentTrack, setCurrentTrack] = useState(JSON.parse(localStorage.getItem('currentTrack')));
     const [trackFeatures, setTrackFeatures] = useState(JSON.parse(localStorage.getItem('trackFeatures')));
     const [searchResults, setSearchResults] = useState(JSON.parse(localStorage.getItem('searchResults')));
     const [playlist, setPlaylist] = useState(localStorage.getItem('playlist') ? JSON.parse(localStorage.getItem('playlist')) : []);
+    const [unfilteredSearchResults, setUnfilteredSearchResults] = useState([]); 
     const [renderedSearchResults, setRenderedSearchResults] = useState(JSON.parse(localStorage.getItem('renderedSearchResults')));
     const [selectedFilterType, setSelectedFilterType] = useState(JSON.parse(localStorage.getItem('selectedFilter')));
-
-    const [unfilteredSearchResults, setUnfilteredSearchResults] = useState([]); 
     const [columnHeaders, setColumnHeaders] = useState(columns)
     const [filters, setFilters] = useState(filterState);
     const [filterActive, setFilterActive] = useState(false);
     const [sort, setSort] = useState({ active: false, parameter: undefined, ascending: undefined});
-    const [filteredSearchResults, setFilteredSearchResults] = useState([]);
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -34,9 +31,12 @@ const Home = () => {
     }, [searchResults])
 
     useEffect(() => {
-        if(!localStorage.getItem('refresh_token') && !localStorage.getItem('access_token')) {
-          getToken();
-        }
+      if(!localStorage.getItem('access_token') && !localStorage.getItem('refresh_token')) {
+        localStorage.setItem('access_token', undefined)
+        localStorage.setItem('refresh_token', undefined)
+        getToken();
+      }
+      
     }, [])
   
     return (
@@ -53,19 +53,12 @@ const Home = () => {
                     setFilterActive={setFilterActive}
                     selectedFilterType={selectedFilterType}
                     setSelectedFilterType={setSelectedFilterType}
-                    setSort={setSort}
-                    columnHeaders={columnHeaders}
                 />
                 <SearchColumns
-                    renderedSearchResults={renderedSearchResults}
                     setRenderedSearchResults={setRenderedSearchResults}
-                    filteredSearchResults={filteredSearchResults}
-                    setFilteredSearch
-                    unfilteredSearchResults={unfilteredSearchResults}
-                    filterActive={filterActive}
                     setSort={setSort}
                     columnHeaders={columnHeaders}
-                    setColumnHeaders={setColumnHeaders}
+             
                 />
               </div>
             </div>
@@ -85,7 +78,6 @@ const Home = () => {
                   setRenderedSearchResults={setRenderedSearchResults}
                   unfilteredSearchResults={unfilteredSearchResults}
                   setUnfilteredSearchResults={setUnfilteredSearchResults}
-                  setFilteredSearchResults={setFilteredSearchResults}
                   sort={sort}
               />
             </div>

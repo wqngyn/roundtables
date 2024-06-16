@@ -1,7 +1,7 @@
 import styles from './Playlist.module.scss'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleMinus } from '@fortawesome/free-solid-svg-icons'
+import { faCircleCheck, faCircleMinus } from '@fortawesome/free-solid-svg-icons'
 
 const PlaylistTrack = ({
     track,
@@ -40,21 +40,29 @@ const PlaylistTrack = ({
                     <h5 className="Artist">{track.artists[0].name}</h5>
                 </div>
                 </div>
-            
-            {!isHovered && 
-                <div className='track-icon no-hover' onClick={() => deleteFromPlaylist(track)}>
-                    {track.keyMatch && getFilterIcon(track.keyMatch)}
-                </div>
-            }
 
-            {isHovered &&
-                <div className="track-icon">
-                     <div className={!isHovered ? `icon removed ${styles['icon-delete']}` : `icon ${styles['icon-delete']}`} onClick={() => deleteFromPlaylist(track)}>
-                        <FontAwesomeIcon icon={faCircleMinus} size='xl' />
+                <div className={styles['track-icons__min']}>
+                    {track.keyMatch && getFilterIcon(track.keyMatch)}
+                    <div className={`icon ${styles['icon-delete']}`} onClick={() => deleteFromPlaylist(track)}>
+                            <FontAwesomeIcon icon={faCircleMinus} size='xl' />
                     </div>
                 </div>
-            }
-          
+
+                <div className={styles['track-icons__max']}>
+                    {!isHovered && 
+                        <div className='track-icon no-hover' onClick={() => deleteFromPlaylist(track)}>
+                            {track.keyMatch && getFilterIcon(track.keyMatch)}
+                        </div>
+                    }
+
+                    {isHovered &&
+                        <div className="track-icon">
+                            <div className={!isHovered ? `icon removed ${styles['icon-delete']}` : `icon ${styles['icon-delete']}`} onClick={() => deleteFromPlaylist(track)}>
+                                <FontAwesomeIcon icon={faCircleMinus} size='xl' />
+                            </div>
+                        </div>
+                    }
+                </div>
         </div>
     )
 }

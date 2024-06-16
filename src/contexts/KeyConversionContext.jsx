@@ -69,7 +69,7 @@ export const compareCamelotKey = (key1, key2) => {
         if(letter1 === 'B') {
             if(num[(num1 + 1 + num.length -1) % num.length] === num2) return 'Diagonal';
         } else if(letter1 === 'A') {
-            if(num[(num1 -1 + num.length - 1) % num.length] === num2) return 'Diagonal';
+            if(num[(num1 - 1 + num.length - 1) % num.length] === num2) return 'Diagonal';
         }
         return 'No Match'
     }

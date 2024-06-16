@@ -15,7 +15,6 @@ const CurrentTrack = ({ currentTrack, trackFeatures }) => {
         <div className={styles.currentTrack}>
             {(currentTrack && trackFeatures) && 
                 <>
-               
                     <div className='image'>
                         <img className={styles['image-album']} src={currentTrack.album.images[1].url}></img>
                     </div>
@@ -26,10 +25,19 @@ const CurrentTrack = ({ currentTrack, trackFeatures }) => {
                             <h2 className='info-artist'>{currentTrack.artists[0].name}</h2>
                             <h3 className='info-album'>{currentTrack.album.name}</h3>
                         </div>
-                        <div className={styles.features}>
-                            <h3 className="features-camelot">{convertToCamelotKey([trackFeatures.key, trackFeatures.mode])}</h3>
-                            <h3 className="features-key">{convertToKey([trackFeatures.key, trackFeatures.mode])}</h3>
-                            <h3 className="features-bpm">{Math.round(trackFeatures.tempo)} BPM</h3>
+                        <div className={styles['track-features']}>
+                            <div className="features-key">
+                                <h4>{convertToKey([trackFeatures.key, trackFeatures.mode])}</h4>
+                                <h5 className={styles.feature}>Key</h5>
+                            </div>
+                            <div className="features-camelot">
+                                <h4>{convertToCamelotKey([trackFeatures.key, trackFeatures.mode])}</h4>
+                                <h5 className={styles.feature}>Camelot</h5>
+                            </div>
+                            <div className="features-bpm">
+                                <h4>{Math.round(trackFeatures.tempo)}</h4>
+                                <h5 className={styles.feature}>BPM</h5>
+                            </div>
                         </div>
                     </div>
             

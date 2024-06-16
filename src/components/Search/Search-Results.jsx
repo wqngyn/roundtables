@@ -23,14 +23,13 @@ const searchResults = ({
     unfilteredSearchResults,
     setUnfilteredSearchResults,
     sort,
-    mounted
 }) => {
 
     const [tracklistFeatures, setTracklistFeatures] = useState(JSON.parse(localStorage.getItem('tracklistFeatures')));
     const [trackIdArr, setTrackIdArr] = useState(JSON.parse(localStorage.getItem('trackIdArr')));
     const { convertToKey, convertToCamelotKey } = useContext(KeyConversionContext);
     const { getRefreshToken } = useContext(TokenAuthContext);
-    const { truncate, sortArr } = useContext(UtilityContext);
+    const { sortArr } = useContext(UtilityContext);
 
     useEffect(() => {
         localStorage.setItem('trackIdArr', JSON.stringify(trackIdArr));
@@ -107,8 +106,11 @@ const searchResults = ({
         }
 
         setUnfilteredSearchResults(searchResultsWithAudioFeatures);
-        setRenderedSearchResults(searchResultsWithAudioFeatures);
+        if(!filterActive) setRenderedSearchResults(searchResultsWithAudioFeatures);
+
     }, [trackFeatures, tracklistFeatures, searchResults])
+
+
 
      // Set unique key match filters.
      useEffect(() => {
@@ -124,33 +126,24 @@ const searchResults = ({
                 setFilters(filtersClone);
             }
         }
-    }, [trackFeatures, tracklistFeatures, renderedSearchResults])
+    }, [tracklistFeatures, renderedSearchResults])
 
     // Handle sorting and filtering, then setRenderedSearchResults.
     useEffect(() => {
         let unfilteredSearchResultsCopy = structuredClone(unfilteredSearchResults);
 
+        if(sort.active) sortArr(unfilteredSearchResultsCopy, sort.parameter, sort.ascending);
 
         if(filterActive) {
             unfilteredSearchResultsCopy.forEach((result) => {
                 (selectedFilterType !== result.keyMatch) ? result.removed = true : result.removed = false;
             });
-            
-            if(sort.active) {
-                const sorted = sortArr(unfilteredSearchResultsCopy, sort.parameter, sort.ascending);
-                setRenderedSearchResults(sorted);
-            } else {
-                setRenderedSearchResults(unfilteredSearchResultsCopy);
-            }
-            
-        } else {
-            unfilteredSearchResultsCopy.forEach((result) => {
-                result.removed = false; 
-            });
-            setRenderedSearchResults(unfilteredSearchResultsCopy);
-        }
-
-    }, [filterActive])
+        } else { 
+            unfilteredSearchResultsCopy.forEach(result => { result.removed = false; }); 
+        }       
+        
+        setRenderedSearchResults(unfilteredSearchResultsCopy);
+    }, [sort, filterActive])
 
 
     return (

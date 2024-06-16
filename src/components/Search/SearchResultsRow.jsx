@@ -32,7 +32,7 @@ const SearchResultsRow = ({
     const handleRowClick = (e, track, index) =>  {
         // prevents accidental setCurrentTrack when adding to playlist.
         if(e.target.tagName !== 'svg' && e.target.tagName !== 'path') {
-            !filterActive && setCurrentTrack(track);
+            setCurrentTrack(track);
             setTrackFeatures(tracklistFeatures[index]); // Prevents redundant API call for single track's audio feature.
         }
     }

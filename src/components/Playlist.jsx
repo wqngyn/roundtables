@@ -14,7 +14,6 @@ const Playlist = ({
 }) => {
     const [userId, setUserId] = useState(null);
     const [playlistId, setPlaylistId] = useState(null);
-    const [playlistName, setPlaylistName] = useState('Set Companion');
     const [buttonText, setButtonText] = useState('Save Playlist to Spotify')
     const [defaultExpanded] = useState(true);
     const { compareCamelotKey, convertToCamelotKey } = useContext(KeyConversionContext);
@@ -65,7 +64,7 @@ const Playlist = ({
                     method: 'POST',
                     headers: { Authorization: 'Bearer ' + localStorage.getItem('access_token')},
                     body: JSON.stringify({
-                        'name': playlistName,
+                        'name': 'Roundtables',
                         'description': '',
                         'public': true
                     })

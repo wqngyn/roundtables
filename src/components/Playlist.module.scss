@@ -39,13 +39,21 @@
             }
         }
 
-    &:last-child {
-        .track-number, .track-text, .icon-delete {
-            color: color.$subheader;
-            svg { color: color.$subheader; }
+        &:last-child {
+            .track-number, .track-text, .icon-delete {
+                color: color.$subheader;
+                svg { color: color.$subheader; }
+            }
         }
+        
+        .track-icons {
+            &__min { display: none; }
+            &__max {
+                display: flex;
+                justify-content: center;
+            }
+        } 
     }
-   }
 
    .btn-save { 
         width: 100%;
@@ -58,4 +66,14 @@
         justify-content: center;
         margin-top: 1rem;
    }
+}
+
+@media screen and (max-width: 630px ) {
+    .playlist .row-playlist .track-icons {
+        &__max { display: none; }
+        &__min {
+            display: flex;
+            gap: 1rem;
+        }
+    }             
 }

@@ -8,8 +8,6 @@ const SearchFilters = ({
     setFilterActive,
     selectedFilterType,
     setSelectedFilterType,
-    setSort,
-    columnHeaders
 }) => {
     
     const [hidden, setHidden] = useState(true);
@@ -18,17 +16,10 @@ const SearchFilters = ({
         e.preventDefault();
         const filterId = e.target.closest('button').id;
         const filter = filters.find(filter => filter.type === filterId);
+
         // Only filter buttons have an ID that matches the key.
-        if(filter) {
-            setSelectedFilterType(filter.type)
-        } else {
-            setSelectedFilterType(undefined);
-            columnHeaders.forEach(column => {
-                column.sort = undefined;
-                column.icon = undefined;
-            })
-            setSort({active: false, parameter: undefined, ascending: undefined});
-        } 
+        filter ? setSelectedFilterType(filter.type) : setSelectedFilterType(undefined);
+   
         // filterActive is useEffect dependency in Search-Results to re-render the results.
         setFilterActive(filterActive => !filterActive);
         

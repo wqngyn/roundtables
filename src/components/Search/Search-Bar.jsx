@@ -42,12 +42,6 @@ const SearchBar = ({
         <div className={`${styles['container-search']}`}>
             <div className={`${styles['search']} box-shadow`}>
                 <form onSubmit={handleSubmit}>
-                    <i 
-                        className={input === '' ? `${styles['icon-search']} ${styles.inactive} no-hover` : `${styles['icon-search']} ${styles.active}`}
-                        onClick={(e) => handleClick(e)}
-                    >
-                        <FontAwesomeIcon icon={faMagnifyingGlass}/>
-                    </i>
                     <input 
                         type="text" 
                         onChange={e => handleInput(e)}
@@ -55,6 +49,12 @@ const SearchBar = ({
                         className={styles['search-input']}
                         placeholder="Search by track, artist, or album." 
                     />
+                    <i 
+                        className={input === '' ? `${styles['icon-search']} ${styles.inactive} no-hover` : `${styles['icon-search']} ${styles.active}`}
+                        onClick={(e) => handleClick(e)}
+                    >
+                        <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                    </i>
                 </form>
             </div>
             <i><FontAwesomeIcon icon={faCircleInfo} size='2xl' /></i>
