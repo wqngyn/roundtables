@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 // Elements
-import Login from './pages/Landing'
-import Home from './pages/Home'
+import Login from './containers/Landing'
+import Home from './containers/Home'
 
 // Contexts
 import { TokenAuthContextProvider } from './contexts/TokenAuthContext'
