@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { UtilityContext } from '../../contexts/UtilityContext'
 import styles from './Search-Columns.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

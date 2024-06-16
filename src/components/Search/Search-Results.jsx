@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext, useRef } from 'react'
-import SearchResultsRow from './Result-Row/SearchResultsRow'
+import SearchResultsRow from './SearchResultsRow'
 import { KeyConversionContext, compareCamelotKey } from '../../contexts/KeyConversionContext'
 import { UtilityContext } from '../../contexts/UtilityContext'
 import { TokenAuthContext } from '../../contexts/TokenAuthContext'

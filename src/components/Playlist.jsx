@@ -1,5 +1,5 @@
 import styles from './Playlist.module.scss'
-import PlaylistTrack from './Playlist/PlaylistTrack'
+import PlaylistTrack from './PlaylistTrack'
 import { useState, useEffect, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'

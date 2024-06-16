@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from '../Search-Results.module.scss'
+import styles from './Search-Results.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCirclePlus, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 
