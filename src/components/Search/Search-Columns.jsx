@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'
-import { UtilityContext } from '../../../contexts/UtilityContext'
+import { UtilityContext } from '../../contexts/UtilityContext'
 import styles from './Search-Columns.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp, faCaretDown, faCirclePlus, faHashtag } from '@fortawesome/free-solid-svg-icons'

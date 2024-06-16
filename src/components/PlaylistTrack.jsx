@@ -39,7 +39,7 @@ const PlaylistTrack = ({
                     <h4 className="Name">{track.name}</h4>
                     <h5 className="Artist">{track.artists[0].name}</h5>
                 </div>
-            </div>
+                </div>
             
             {!isHovered && 
                 <div className='track-icon no-hover' onClick={() => deleteFromPlaylist(track)}>

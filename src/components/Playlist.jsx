@@ -1,9 +1,9 @@
 import styles from './Playlist.module.scss'
-import PlaylistTrack from './PlaylistTrack'
+import PlaylistTrack from './Playlist/PlaylistTrack'
 import { useState, useEffect, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
-import { KeyConversionContext } from '../../contexts/KeyConversionContext'
+import { KeyConversionContext } from '../contexts/KeyConversionContext'
 import { useCollapse } from 'react-collapsed'
 
 const Playlist = ({ 

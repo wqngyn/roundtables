@@ -1,5 +1,5 @@
 import  { useContext, useEffect } from 'react'
-import { KeyConversionContext } from '../../contexts/KeyConversionContext';
+import { KeyConversionContext } from '../contexts/KeyConversionContext';
 import styles from './CurrentTrack.module.scss'
  
 const CurrentTrack = ({ currentTrack, trackFeatures }) => {
