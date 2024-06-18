@@ -6,8 +6,8 @@ export const TokenAuthContextProvider = ({children}) => {
     // Auth URL and Parameters
     const tokenUrl = 'https://accounts.spotify.com/api/token';
     const clientId = '8344bbb71e7d4419a75beba93f6b26e1';
-    // const redirectUri = 'https://roundtables.vercel.app/home'
-    const redirectUri = 'http://localhost:5173/home'
+    const redirectUri = 'https://roundtables.vercel.app/home'
+    // const redirectUri = 'http://localhost:5173/home'
     
     const urlParams = new URLSearchParams(window.location.search);
     let code = urlParams.get('code');
