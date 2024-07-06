@@ -1,6 +1,6 @@
 import { useState } from 'react' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faHouse, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 import styles from './Search-Bar.module.scss'
 
 const SearchBar = ({ 

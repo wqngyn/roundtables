@@ -52,7 +52,6 @@ const searchResults = ({
         try {
             // 2. Using trackIdArr, fetch audio features for whole list.
             const fetchTracklistFeatures = async() => {
-                console.log('fetch')
                 const trackIdArrStr = idArr.join('%2C');
                 const response = await fetch(`https://api.spotify.com/v1/audio-features?ids=${trackIdArrStr}`, {
                     headers: { Authorization: 'Bearer ' + localStorage.getItem('access_token')}
@@ -62,16 +61,19 @@ const searchResults = ({
             }
 
             const setCurrentAsFirst = (audioFeatures) => {
-                setCurrentTrack(searchResults[0]);
-                setTrackFeatures(audioFeatures[0]);
+                if(!isMounted.current) {
+                    setCurrentTrack(searchResults[0]);
+                    setTrackFeatures(audioFeatures[0]);
+                    isMounted.current = true;
+                }
             }
             
             if(idArr.length !== 0) {
-                if(!isMounted.current) {
+                if(!isMounted.current) { // the page is either rendered for the first time or refreshed.
                     const localTracklistFeatures = JSON.parse(localStorage.getItem('tracklistFeatures'));
                     (!localTracklistFeatures) ? fetchTracklistFeatures() : setTracklistFeatures(localTracklistFeatures);
-                    isMounted.current = true;
                 } else {
+                    // if already mounted, this is a regular call made after the page is rendered.
                     fetchTracklistFeatures();
                 }   
             }
